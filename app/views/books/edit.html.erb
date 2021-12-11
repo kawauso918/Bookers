@@ -1,3 +1,4 @@
+<%= notice %>
  <h1>Editing Book</h1>
 <%= form_with model:@book,url: "/books/#{@book.id}",  local:true do |f| %>
 
@@ -20,4 +21,10 @@
 </form>
 
 <%= link_to "show", book_path(@book.id) %>|
-<%= link_to "Back", books_path(@book.id) %>|
+<%= link_to "Back", books_path(@book.id) %>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
