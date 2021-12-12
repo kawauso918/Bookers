@@ -39,13 +39,13 @@
   <%= f.text_area :body %>
 </div>
 <div>
-  <%= f.submit "Create book" %>
+  <%= f.submit "Create Book" %>
 </div>
 <% end %>
 </h2>
 </>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
+  <%= @book.errors.count %> errors prohibited this book from being saved:
   <% @book.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
